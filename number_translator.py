@@ -1,5 +1,6 @@
-def assertAreEqual(expected, actual):
-    print expected == actual
+def assertAreEqual(original, expected):
+    out = translateNumber(original)
+    print '%s == %s : %s' % (original, expected, out == expected)
 
 def translateNumber(number):
     if (number is None or number == ""):
@@ -13,11 +14,11 @@ def translateNumber(number):
     
     
     
-assertAreEqual(translateNumber(""), "")
-assertAreEqual(translateNumber(None), "")
-assertAreEqual(translateNumber(0), "zero")
-assertAreEqual(translateNumber(1), "one")
-assertAreEqual(translateNumber(9), "nine")
-assertAreEqual(translateNumber(10), "ten")
-assertAreEqual(translateNumber(15), "fifteen")
-assertAreEqual(translateNumber(20), "twenty")
+assertAreEqual("", "")
+assertAreEqual(None, "")
+assertAreEqual(0, "zero")
+assertAreEqual(1, "one")
+assertAreEqual(9, "nine")
+assertAreEqual(10, "ten")
+assertAreEqual(15, "fifteen")
+assertAreEqual(20, "twenty")
